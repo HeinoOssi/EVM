@@ -10,7 +10,7 @@ Ouas
 // Replace the com port
 // TODO: 
 // - automatically search for the port where arduino is connected
-char *portname = "\\\\.\\COM1";
+char *portname = "\\\\.\\COM7";
 char IncomingData[MAX_DATA_LENGTH];
 
 int main() {
@@ -26,4 +26,5 @@ int main() {
 		Sleep(100);
 
 	}
+
 }
