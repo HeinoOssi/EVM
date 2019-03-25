@@ -18,12 +18,18 @@
     <ClInclude Include="COMConnect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DBConnect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="COMConnect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DBConnect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

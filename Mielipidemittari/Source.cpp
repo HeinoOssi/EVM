@@ -10,7 +10,8 @@ Ouas
 // Replace the com port
 // TODO: 
 // - automatically search for the port where arduino is connected
-char *portname = "\\\\.\\COM7";
+
+char *portname = "\\\\.\\COM3";				// Make sure this is the same what Arduino uses
 char IncomingData[MAX_DATA_LENGTH];
 
 int main() {
@@ -23,7 +24,7 @@ int main() {
 		// Check if theres something to read
 		int readevm = EVM.readPort(IncomingData, MAX_DATA_LENGTH);
 		puts(IncomingData);
-		Sleep(100);
+		Sleep(1000);
 
 	}
 
