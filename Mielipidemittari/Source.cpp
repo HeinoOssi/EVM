@@ -12,30 +12,23 @@ Ouas
 // TODO: 
 // - automatically search for the port where arduino is connected
 
-char *portname = "\\\\.\\COM3	";				// Make sure this is the same what Arduino uses
+char *portname = "\\\\.\\COM3";				// Make sure this is the same what Arduino uses
 char IncomingData[MAX_DATA_LENGTH];
 
 int main() {
-	std::string t_port;
-
-	// Ask for the port number, makes it easier than edit the code every time	
-	std::cout << "Enter the serial port number, 3 as example" << std::endl;
-	std::cin >> t_port;
-	// Append
-	std::string::append(&portname, t_port);
-
 	COMConnect EVM(portname);
+
 	if (EVM.isConnected()) std::cout << "Connected to Electronic Voting Machine" << std::endl;
 	else std::cout << "Theres probably an error with the port name, check that" << std::endl;
 
 	while (EVM.isConnected()) {
 		// Check if theres something to read
+		// TODO: everything
 		int readevm = EVM.readPort(IncomingData, MAX_DATA_LENGTH);
 		puts(IncomingData);
 		Sleep(1000);
 
 	}
-	scanf("%c", t_port);
 
 
 }
