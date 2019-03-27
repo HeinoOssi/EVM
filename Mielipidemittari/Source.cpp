@@ -4,6 +4,7 @@
 #include <string>
 #include <stdlib.h>
 #include "COMConnect.h"
+#include "EVMApp.h"
 /*
 Electronic Voting Machine project.
 Ouas
@@ -12,11 +13,29 @@ Ouas
 // TODO: 
 // - automatically search for the port where arduino is connected
 
-char *portname = "\\\\.\\COM3";				// Make sure this is the same what Arduino uses
+char *portname = "\\\\.\\COM";				// Make sure this is the same what Arduino uses
 char IncomingData[MAX_DATA_LENGTH];
 
-int main() {
+int main(){
+	//***************************************************
+	// TODO: move these to separate function
+	std::string temp_address = "\\\\.\\COM";
+	std::string temp_string;
+	const char *temp_port;
+
+	std::cout << "Enter port number" << std::endl;
+	std::cin >> temp_string;
+	temp_address.append(temp_string);
+	temp_port = temp_address.c_str();
+
+	// Use iterator to modify string to char*
+	std::string::iterator p = temp_address.begin();
+	portname = &(*p);
+	//***************************************************
+
+
 	COMConnect EVM(portname);
+	EVMApp VotingMachineApp;
 
 	if (EVM.isConnected()) std::cout << "Connected to Electronic Voting Machine" << std::endl;
 	else std::cout << "Theres probably an error with the port name, check that" << std::endl;
@@ -26,9 +45,14 @@ int main() {
 		// TODO: everything
 		int readevm = EVM.readPort(IncomingData, MAX_DATA_LENGTH);
 		puts(IncomingData);
+		
+		// So, the application runs in here:
+		VotingMachineApp.EVMRun();
+
+		
 		Sleep(1000);
 
 	}
-
+	std::cin >> temp_string;
 
 }

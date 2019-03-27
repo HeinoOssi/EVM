@@ -112,10 +112,12 @@
   <ItemGroup>
     <ClInclude Include="COMConnect.h" />
     <ClInclude Include="DBConnect.h" />
+    <ClInclude Include="EVMApp.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="COMConnect.cpp" />
     <ClCompile Include="DBConnect.cpp" />
+    <ClCompile Include="EVMApp.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
