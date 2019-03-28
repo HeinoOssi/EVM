@@ -44,13 +44,13 @@ int main(){
 		// Check if theres something to read
 		// TODO: everything
 		int readevm = EVM.readPort(IncomingData, MAX_DATA_LENGTH);
-		puts(IncomingData);
+		if (IncomingData != NULL) puts(IncomingData);
 		
 		// So, the application runs in here:
 		VotingMachineApp.EVMRun();
 
 		
-		Sleep(1000);
+		Sleep(100);
 
 	}
 	std::cin >> temp_string;

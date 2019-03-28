@@ -45,7 +45,7 @@ COMConnect::COMConnect(char *portname)
 
 int COMConnect::readPort(char *buffer, unsigned int bufsize) {
 	DWORD bytesRead;
-	unsigned int toRead;
+	unsigned int toRead = 1;
 
 	ClearCommError(this->m_handler, &this->m_errors, &this->m_status);
 
