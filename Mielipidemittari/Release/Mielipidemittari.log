@@ -1,0 +1,6 @@
+﻿  COMConnect.cpp
+  DBConnect.cpp
+  EVMApp.cpp
+  EVMVote.cpp
+  Source.cpp
+LINK : fatal error LNK1181: cannot open input file 'mysqlcppconn.lib'

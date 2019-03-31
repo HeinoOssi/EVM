@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include "COMConnect.h"
 #include "EVMApp.h"
+#include "DBConnect.h"
+
 /*
 Electronic Voting Machine project.
 Ouas
@@ -13,8 +15,9 @@ Ouas
 // TODO: 
 // - automatically search for the port where arduino is connected
 
-char *portname = "\\\\.\\COM";				// Make sure this is the same what Arduino uses
 char IncomingData[MAX_DATA_LENGTH];
+char *portname = "\\\\.\\COM";				// Make sure this is the same what Arduino uses
+
 
 int main(){
 	//***************************************************
@@ -32,8 +35,8 @@ int main(){
 	std::string::iterator p = temp_address.begin();
 	portname = &(*p);
 	//***************************************************
-
-
+	// SQL Connection
+	
 	COMConnect EVM(portname);
 	EVMApp VotingMachineApp;
 
@@ -53,6 +56,7 @@ int main(){
 		Sleep(100);
 
 	}
-	std::cin >> temp_string;
+	std::cin >> portname;
 
 }
+

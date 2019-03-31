@@ -1,0 +1,10 @@
+﻿  COMConnect.cpp
+  DBConnect.cpp
+  EVMApp.cpp
+  EVMVote.cpp
+  Source.cpp
+  Generating code
+  All 128 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Mielipidemittari.vcxproj -> D:\VC, C, NODEJS\C++\SOFTWARE\EVM\x64\Release\Mielipidemittari.exe
+  Mielipidemittari.vcxproj -> D:\VC, C, NODEJS\C++\SOFTWARE\EVM\x64\Release\Mielipidemittari.pdb (Full PDB)

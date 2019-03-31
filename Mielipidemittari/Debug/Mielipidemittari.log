@@ -1,3 +1,10 @@
 ﻿  Source.cpp
-  Mielipidemittari.vcxproj -> D:\VC, C, NODEJS\C++\SOFTWARE\Mielipidemittari\Debug\Mielipidemittari.exe
-  Mielipidemittari.vcxproj -> D:\VC, C, NODEJS\C++\SOFTWARE\Mielipidemittari\Debug\Mielipidemittari.pdb (Partial PDB)
+  EVMVote.cpp
+  EVMApp.cpp
+  DBConnect.cpp
+  COMConnect.cpp
+  Generating Code...
+DBConnect.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __thiscall sql::SQLString::~SQLString(void)" (__imp_??1SQLString@sql@@QAE@XZ) referenced in function "public: __thiscall DBConnect::DBConnect(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0DBConnect@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z)
+DBConnect.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __thiscall sql::SQLString::SQLString(char const * const)" (__imp_??0SQLString@sql@@QAE@QBD@Z) referenced in function "public: __thiscall DBConnect::DBConnect(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0DBConnect@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z)
+DBConnect.obj : error LNK2019: unresolved external symbol __imp__get_driver_instance referenced in function "public: __thiscall DBConnect::DBConnect(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0DBConnect@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z)
+D:\VC, C, NODEJS\C++\SOFTWARE\EVM\Debug\Mielipidemittari.exe : fatal error LNK1120: 3 unresolved externals
