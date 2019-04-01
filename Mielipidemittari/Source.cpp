@@ -39,7 +39,7 @@ int main(){
 	// and password
 	// TODO: HIDE THE PASSWORD
 	std::string t_address, t_schema, t_username, t_password;
-	std::cout << "Enter Database address" << std::endl;
+	std::cout << "Enter Database hostname" << std::endl;
 	std::cin >> t_address;
 	std::cout << "Enter Database username" << std::endl;
 	std::cin >> t_username;
