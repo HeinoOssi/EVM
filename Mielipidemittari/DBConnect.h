@@ -16,7 +16,8 @@
 class DBConnect
 {
 public:
-	DBConnect(std::string t_address, std::string t_user, std::string t_password);
+	void AddData(const char t_Vote, int t_VoteCount);
+	DBConnect(std::string t_address, std::string t_schema, std::string t_user, std::string t_password);
 	~DBConnect();
 	
 	bool isConnected() { return this->m_IsConnected; }
@@ -26,6 +27,7 @@ private:
 	sql::Connection *con;
 	sql::Statement *stmt;
 	sql::ResultSet *res;
+	sql::PreparedStatement *pstmt;
 	bool m_IsConnected;
 
 

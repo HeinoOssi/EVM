@@ -4,7 +4,6 @@
 #include <string>
 #include <stdlib.h>
 #include "COMConnect.h"
-#include "EVMApp.h"
 #include "DBConnect.h"
 
 /*
@@ -36,10 +35,24 @@ int main(){
 	portname = &(*p);
 	//***************************************************
 	// SQL Connection
+	// Ask for MySQL Database address, schema, username
+	// and password
+	// TODO: HIDE THE PASSWORD
+	std::string t_address, t_schema, t_username, t_password;
+	std::cout << "Enter Database address" << std::endl;
+	std::cin >> t_address;
+	std::cout << "Enter Database username" << std::endl;
+	std::cin >> t_username;
+	std::cout << "Enter Database password ( NOTE: The password is not hidden yet )" << std::endl;
+	std::cin >> t_password;
+	std::cout << "Enter Database schema" << std::endl;
+	std::cin >> t_schema;
+
+	
+	DBConnect *DBC = new DBConnect(t_address, t_schema, t_username, t_password);
+	
 	
 	COMConnect EVM(portname);
-	EVMApp VotingMachineApp;
-
 	if (EVM.isConnected()) std::cout << "Connected to Electronic Voting Machine" << std::endl;
 	else std::cout << "Theres probably an error with the port name, check that" << std::endl;
 
@@ -47,10 +60,14 @@ int main(){
 		// Check if theres something to read
 		// TODO: everything
 		int readevm = EVM.readPort(IncomingData, MAX_DATA_LENGTH);
-		if (IncomingData != NULL) puts(IncomingData);
-		
-		// So, the application runs in here:
-		VotingMachineApp.EVMRun();
+		if (IncomingData != NULL) {
+			puts(IncomingData);
+			// Lets read the values
+			char Vote;
+			int VoteCount;
+			
+
+		}
 
 		
 		Sleep(100);
