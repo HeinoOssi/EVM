@@ -16,11 +16,12 @@
 class DBConnect
 {
 public:
-	void AddData(const char t_Vote, int t_VoteCount);
-	DBConnect(std::string t_address, std::string t_schema, std::string t_user, std::string t_password);
-	~DBConnect();
+	void AddData(char *t_Vote, int t_VoteCount);				// Function to add data into db
+	DBConnect(std::string t_address, std::string t_schema,		// Constructor 
+		std::string t_user, std::string t_password);
+	~DBConnect();												// Destructor
 	
-	bool isConnected() { return this->m_IsConnected; }
+	bool isConnected() { return this->m_IsConnected; }			// Returns true if connected
 
 private:
 	sql::Driver *driver;

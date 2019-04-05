@@ -1,10 +1,8 @@
 ﻿  COMConnect.cpp
   DBConnect.cpp
   Source.cpp
-Source.cpp(67): warning C4101: 'VoteCount': unreferenced local variable
-Source.cpp(66): warning C4101: 'Vote': unreferenced local variable
   Generating code
-  All 140 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 138 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   Mielipidemittari.vcxproj -> D:\VC, C, NODEJS\C++\SOFTWARE\EVM\x64\Release\Mielipidemittari.exe
   Mielipidemittari.vcxproj -> D:\VC, C, NODEJS\C++\SOFTWARE\EVM\x64\Release\Mielipidemittari.pdb (Full PDB)
