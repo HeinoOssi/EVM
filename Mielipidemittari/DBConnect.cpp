@@ -27,13 +27,18 @@ DBConnect::DBConnect(std::string t_address, std::string t_schema, std::string t_
 
 }
 
-void DBConnect::AddData(char *t_Vote, int t_VoteCount) {
-	// TODO:
-	// TABLE NAME USER; COLUMN NAMES VOTE, VOTECOUNT;
-	char t_InsertData[] = "INSERT INTO user (vote, votecount) VALUES ('%s', '%d')";
-	char t_Query[128];											// Temporary query char
-	sprintf_s(t_Query, t_InsertData, t_Vote, t_VoteCount);		// Appends all given data into t_Query
-	std::cout << t_Query;									
+bool DBConnect::AddData(char *t_query) {
+	stmt = con->createStatement();
+	stmt->execute("DROP TABLE IF EXISTS testi1");
+	 
+	delete stmt;
+
+	stmt = con->createStatement();
+	stmt->execute(t_query);
+
+	delete stmt;
+	
+	return true;
 
 }
 

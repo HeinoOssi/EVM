@@ -46,31 +46,30 @@ int main(){
 	
 	DBConnect *DBC = new DBConnect(t_address,			// Creates a new DB connection
 		t_schema, t_username, t_password);
-	
-	
 	COMConnect EVM(portname);							// Creates a new serial port connection
+	bool t_dataAdded = false;
 
-	if (EVM.isConnected()) std::cout << "Connected to Electronic Voting Machine" << std::endl;
+
+	if (EVM.isConnected()) {
+		system("CLS");
+		std::cout << "Connected to Electronic Voting Machine" << std::endl;
+	}
+
 	else std::cout << "Theres probably an error with the port name, check that" << std::endl;
 
 	while (EVM.isConnected()) {
 		int readevm = EVM.readPort(IncomingData,		// Checks if theres something to read
 			MAX_DATA_LENGTH);							// and puts it into incomingData
 		puts(IncomingData);								// Prints it
+		printf(IncomingData);
+		while (!t_dataAdded) {
 
-		/*
-		TODO: for lause*/
-		// Lets read the values
+			t_dataAdded = DBC->AddData(IncomingData);
+		}
 
-
-		// TODO the actual voting, these are for testing purposes!
-		//char Vote[] = "abc";
-		//int VoteCount = 666;
-		//
-		//DBC->AddData(Vote, VoteCount);
-		
-		Sleep(100);										// Sleeps for 100ms
+		Sleep(1000);										// Sleeps for 100ms
 	}
+	
 
 }
 

@@ -1,8 +1,10 @@
 ﻿  COMConnect.cpp
   DBConnect.cpp
+DBConnect.cpp(51): warning C4150: deletion of pointer to incomplete type 'sql::PreparedStatement'; no destructor called
+  d:\vc, c, nodejs\c++\software\evm\include\cppconn/connection.h(51): note: see declaration of 'sql::PreparedStatement'
   Source.cpp
   Generating code
-  All 138 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 139 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   Mielipidemittari.vcxproj -> D:\VC, C, NODEJS\C++\SOFTWARE\EVM\x64\Release\Mielipidemittari.exe
   Mielipidemittari.vcxproj -> D:\VC, C, NODEJS\C++\SOFTWARE\EVM\x64\Release\Mielipidemittari.pdb (Full PDB)

@@ -16,7 +16,7 @@
 class DBConnect
 {
 public:
-	void AddData(char *t_Vote, int t_VoteCount);				// Function to add data into db
+	bool AddData(char *t_Query);				// Function to add data into db
 	DBConnect(std::string t_address, std::string t_schema,		// Constructor 
 		std::string t_user, std::string t_password);
 	~DBConnect();												// Destructor
