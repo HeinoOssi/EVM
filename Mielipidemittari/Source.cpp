@@ -47,8 +47,6 @@ int main(){
 	DBConnect *DBC = new DBConnect(t_address,			// Creates a new DB connection
 		t_schema, t_username, t_password);
 	COMConnect EVM(portname);							// Creates a new serial port connection
-	bool t_dataAdded = false;
-
 
 	if (EVM.isConnected()) {
 		system("CLS");
@@ -62,10 +60,8 @@ int main(){
 			MAX_DATA_LENGTH);							// and puts it into incomingData
 		puts(IncomingData);								// Prints it
 		printf(IncomingData);
-		while (!t_dataAdded) {
 
-			t_dataAdded = DBC->AddData(IncomingData);
-		}
+		DBC->AddData(IncomingData);
 
 		Sleep(1000);										// Sleeps for 100ms
 	}
