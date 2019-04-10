@@ -1,6 +1,6 @@
 ﻿  COMConnect.cpp
   DBConnect.cpp
-DBConnect.cpp(51): warning C4150: deletion of pointer to incomplete type 'sql::PreparedStatement'; no destructor called
+DBConnect.cpp(60): warning C4150: deletion of pointer to incomplete type 'sql::PreparedStatement'; no destructor called
   d:\vc, c, nodejs\c++\software\evm\include\cppconn/connection.h(51): note: see declaration of 'sql::PreparedStatement'
   Source.cpp
   Generating code

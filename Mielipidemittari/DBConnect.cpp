@@ -28,16 +28,25 @@ DBConnect::DBConnect(std::string t_address, std::string t_schema, std::string t_
 }
 
 bool DBConnect::AddData(char *t_query) {
-	stmt = con->createStatement();
-	stmt->execute("DROP TABLE IF EXISTS testi1");
-	 
-	delete stmt;
+	try {
+		stmt = con->createStatement();
+		stmt->execute("DROP TABLE IF EXISTS testi1");
 
-	stmt = con->createStatement();
-	stmt->execute(t_query);
+		delete stmt;
 
-	delete stmt;
-	
+		stmt = con->createStatement();
+		stmt->execute(t_query);
+
+		delete stmt;
+	}
+
+	catch (sql::SQLException &e) {
+		std::cout << "ERR: SQLException in " << __FILE__;
+		std::cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
+		std::cout << "ERR: " << e.what();
+		std::cout << " (MySQL error code: " << e.getErrorCode();
+		std::cout << ", SQLState: " << e.getSQLState() << " )" << std::endl;
+	}
 	return true;
 
 }
