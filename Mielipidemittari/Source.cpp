@@ -56,14 +56,16 @@ int main(){
 	else std::cout << "Theres probably an error with the port name, check that" << std::endl;
 
 	while (EVM.isConnected()) {
-		int readevm = EVM.readPort(IncomingData,		// Checks if theres something to read
-			MAX_DATA_LENGTH);							// and puts it into incomingData
-		puts(IncomingData);								// Prints it
-		printf(IncomingData);
+		if (IncomingData != NULL) {
+			int readevm = EVM.readPort(IncomingData,		// Checks if theres something to read
+				MAX_DATA_LENGTH);							// and puts it into incomingData
+			puts(IncomingData);								// Prints it
+			printf(IncomingData);
 
-		DBC->AddData(IncomingData);
+			DBC->AddData(IncomingData);
+		}
 
-		Sleep(1000);										// Sleeps for 100ms
+		//Sleep(1000);										// Sleeps for 100ms
 	}
 	
 
