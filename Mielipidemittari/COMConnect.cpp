@@ -15,7 +15,6 @@ COMConnect::COMConnect(char *portname)
 	if (this->m_handler == INVALID_HANDLE_VALUE) {
 		if (GetLastError() == ERROR_FILE_NOT_FOUND) printf("%s not available\n", portname);
 		else printf("Unknown error\n");
-
 	}
 
 	else {
@@ -54,6 +53,8 @@ int COMConnect::readPort(char *buffer, unsigned int bufsize) {
 		else toRead = this->m_status.cbInQue;
 	}
 
+	memset(buffer, 0, bufsize);
+
 	if (ReadFile(this->m_handler, buffer, toRead, &bytesRead, NULL)) return bytesRead;
 
 	return 0;
@@ -62,14 +63,17 @@ int COMConnect::readPort(char *buffer, unsigned int bufsize) {
 
 // TODO:
 bool COMConnect::writePort(char *buffer, unsigned int bufsize) {
-	// Maybe not required in this project?
-	
-	return false;
-}
-bool COMConnect::isConnected() {
-	
-	return this->m_isConnected;
+	DWORD bytesSend;
 
+	if (!WriteFile(this->m_handler, (void*)buffer, bufsize, &bytesSend, 0)) {
+		ClearCommError(this->m_handler, &this->m_errors, &this->m_status);
+		return false;
+	}
+	else return true;
+}
+
+bool COMConnect::isConnected() {
+	return this->m_isConnected;
 }
 
 COMConnect::~COMConnect()
